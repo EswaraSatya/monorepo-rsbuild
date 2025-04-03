@@ -1,0 +1,38 @@
+name: Nx Dynamic CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Set base and head SHAs for affected
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Run affected targets
+        run: |
+          npx nx affected --target=lint --target=test --target=build \
+            --base=$NX_BASE --head=$NX_HEAD --parallel

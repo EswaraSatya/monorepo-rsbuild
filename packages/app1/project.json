@@ -1,0 +1,49 @@
+{
+  "name": "app1",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/app1/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "command": "rsbuild build --config packages/app1/rsbuild.config.ts",
+        "cwd": "packages/app1"
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "command": "rsbuild build --config packages/app1/rsbuild.config.ts --watch",
+          "cwd": "packages/app1"
+        },
+        "production": {
+          "command": "rsbuild build --config packages/app1/rsbuild.config.ts",
+          "cwd": "packages/app1"
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "rsbuild start --config packages/app1/rsbuild.config.ts",
+        "cwd": "packages/app1"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/app1/**/*.ts", "packages/app1/**/*.tsx"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/app1/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

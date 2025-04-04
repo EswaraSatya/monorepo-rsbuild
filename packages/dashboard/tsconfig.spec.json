@@ -6,8 +6,8 @@
     "sourceMap": true,
     "declaration": true,                  // ✅ MUST be true when composite is true
     "composite": true,                    // ✅ Required for project references
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext",
+    // "moduleResolution": "NodeNext",
+    // "module": "NodeNext",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

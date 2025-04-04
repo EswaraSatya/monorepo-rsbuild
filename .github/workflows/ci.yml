@@ -29,10 +29,20 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Set base and head SHAs for affected
+      - name: Install Rspack CLI
+        run: npm install -g @rspack/cli
+
+      - name: Set base and head SHAs
         uses: nrwl/nx-set-shas@v4
 
-      - name: Run affected targets
-        run: |
-          npx nx affected --target=lint --target=test --target=build \
-            --base=$NX_BASE --head=$NX_HEAD --parallel
+      - name: Reset Nx cache
+        run: npx nx reset
+
+      - name: Run affected lint
+        run: npx nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --verbose
+
+      - name: Run affected test
+        run: npx nx affected --target=test --base=$NX_BASE --head=$NX_HEAD --verbose
+
+      - name: Run affected build
+        run: npx nx affected --target=build --base=$NX_BASE --head=$NX_HEAD --verbose

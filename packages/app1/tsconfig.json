@@ -1,20 +1,35 @@
+// {
+//   "compilerOptions": {
+//     "jsx": "react-jsx",
+//     "allowJs": false,
+//     "esModuleInterop": false,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//   },
+//   "files": [],
+//   // "include": [],
+//   "include": ["**/*.spec.ts", "**/*.test.ts"],
+//   "references": [
+//     {
+//       "path": "./tsconfig.app.json"
+//     },
+//     {
+//       "path": "./tsconfig.spec.json"
+//     }
+//   ],
+//   "extends": "../../tsconfig.base.json"
+// }
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "module": "CommonJS", // ✅ Fix: Jest requires CommonJS, not NodeNext
+    "moduleResolution": "Node", // ✅ Use "Node" instead of "NodeNext"
     "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+    "isolatedModules": false
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ],
-  "extends": "../../tsconfig.base.json"
+  "include": ["src", "tests", "**/*.spec.ts", "**/*.test.ts"]
 }
+

@@ -9,17 +9,17 @@
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "command": "rsbuild build --config packages/app1/rsbuild.config.ts",
+        "command": "rsbuild build --config rsbuild.config.ts",
         "cwd": "packages/app1"
       },
       "defaultConfiguration": "production",
       "configurations": {
         "development": {
-          "command": "rsbuild build --config packages/app1/rsbuild.config.ts --watch",
+          "command": "rsbuild build --config rsbuild.config.ts --watch",
           "cwd": "packages/app1"
         },
         "production": {
-          "command": "rsbuild build --config packages/app1/rsbuild.config.ts",
+          "command": "rsbuild build --config rsbuild.config.ts",
           "cwd": "packages/app1"
         }
       }
@@ -27,7 +27,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "rsbuild start --config packages/app1/rsbuild.config.ts",
+        "command": "rsbuild start --config rsbuild.config.ts",
         "cwd": "packages/app1"
       }
     },

@@ -6,10 +6,14 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "module": "NodeNext",                    // ✅ <-- FIXED
-    "moduleResolution": "NodeNext"           // ✅ <-- FIXED
+    "module": "NodeNext",                    
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./",                   
+    "paths": {
+      "@app/*": ["src/*"]             // ✅ Optional: Map alias if needed
+    }
   },
-  "include": ["src", "src/remotes.d.ts"],
+  "include": ["src", "./src/remotes.d.ts"],  // ✅ FIX: Ensure `src/remotes.d.ts` is relative
   "references": [
     {
       "path": "./tsconfig.spec.json"

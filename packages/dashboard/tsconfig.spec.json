@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "rootDir": ".",
     "sourceMap": true,
     "declaration": true,                  // ✅ MUST be true when composite is true

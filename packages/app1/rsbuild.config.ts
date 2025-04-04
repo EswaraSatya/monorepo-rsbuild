@@ -3,7 +3,7 @@ import { defineConfig } from '@rsbuild/core';
 export default defineConfig({
   source: {
     entry: {
-      main: './src/index.tsx', // Ensure this file exists
+      main: './src/app/app.tsx', // Ensure this file exists
     },
   },
   html: {

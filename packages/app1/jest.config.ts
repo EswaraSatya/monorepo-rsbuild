@@ -32,5 +32,9 @@ export default {
       tsconfig: '<rootDir>/tsconfig.jest.json',
       isolatedModules: true
     }
-  }
+  },
+  moduleDirectories: ['node_modules', '<rootDir>'],
+  // Apply the Jest module resolution fix for TypeScript compatibility
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 } satisfies Config;
+

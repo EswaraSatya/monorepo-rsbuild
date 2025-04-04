@@ -1,17 +1,30 @@
+// {
+//   "extends": "./tsconfig.json",
+//   "compilerOptions": {
+//     "outDir": "../../dist/out-tsc",
+//     "module": "NodeNext",   // ✅ must match the moduleResolution
+//     "types": [
+//       "jest",
+//       "node",
+//       "@nx/react/typings/cssmodule.d.ts",
+//       "@nx/react/typings/image.d.ts"
+//     ]
+//   },
+//   "include": [
+//     "src/**/*",
+//     "jest.config.ts"
+//   ]
+// }
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "module": "NodeNext",   // ✅ must match the moduleResolution
-    "types": [
-      "jest",
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
-    ]
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true
   },
-  "include": [
-    "src/**/*",
-    "jest.config.ts"
-  ]
+  "extends": "./tsconfig.json",
+  "include": ["**/*.spec.ts", "**/*.test.ts"]
 }

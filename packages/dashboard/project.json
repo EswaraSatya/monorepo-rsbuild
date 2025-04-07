@@ -21,7 +21,7 @@
           "cwd": "packages/dashboard"
         },
         "production": {
-          "command": "rsbuild build --config rsbuild.config.ts`",
+          "command": "rsbuild build --config rsbuild.config.ts",
           "cwd": "packages/dashboard"
         }
       }

@@ -1,20 +1,12 @@
 import { defineConfig } from '@rsbuild/core';
-import { pluginReact } from '@rsbuild/plugin-react';
 
 export default defineConfig({
-  plugins: [pluginReact()],
-  output: {
-    distPath: {
-      root: 'dist',
-    },
-    cleanDistPath: true,
-  },
   source: {
     entry: {
-      index: './src/index.tsx',
+      main: './src/app/app.tsx', // Ensure this file exists
     },
   },
-  performance: {
-    buildCache: false,
+  html: {
+    title: 'App2',
   },
 });

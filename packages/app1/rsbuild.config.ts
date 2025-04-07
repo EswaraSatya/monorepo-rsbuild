@@ -7,10 +7,14 @@ export default defineConfig({
     distPath: {
       root: 'dist',
     },
+    cleanDistPath: true,
   },
   source: {
     entry: {
       index: './src/index.tsx',
     },
+  },
+  performance: {
+    buildCache: false,
   },
 });

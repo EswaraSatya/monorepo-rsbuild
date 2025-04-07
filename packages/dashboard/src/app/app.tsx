@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import NxWelcome from './nx-welcome';
-import App1 from 'app1/Module';
-import App2 from 'app2/Module';
 
-// const App1 = React.lazy(() => import('app1/Module'));
-// const App2 = React.lazy(() => import('app2/Module'));
+const App1 = React.lazy(() => import('app1/Module'));
+const App2 = React.lazy(() => import('app2/Module'));
 
 export function App() {
   return (

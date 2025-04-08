@@ -43,13 +43,19 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "nx:run-commands",
       "outputs": [
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "packages/dashboard/jest.config.ts",
+        "command": "vitest run --config vitest.config.ts",
+        "cwd": "packages/dashboard",
         "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "command": "vitest run --config vitest.config.ts"
+        }
       }
     }
   }

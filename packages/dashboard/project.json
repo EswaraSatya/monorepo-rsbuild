@@ -42,20 +42,20 @@
         ]
       }
     },
-      "test": {
-        "executor": "nx:run-commands",
-        "outputs": [
-          "{workspaceRoot}/coverage/{projectRoot}"
-        ],
-        "options": {
-          "command": "vitest run --config packages/dashboard/vitest.config.ts --passWithNoTests",
-          "cwd": "."
-        },
-        "configurations": {
-          "ci": {
-            "command": "vitest run --config vitest.config.ts"
-          }
+    "test": {
+      "executor": "nx:run-commands",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "command": "vitest run --config packages/dashboard/vitest.config.ts --passWithNoTests",
+        "cwd": "."
+      },
+      "configurations": {
+        "ci": {
+          "command": "vitest run --config packages/dashboard/vitest.config.ts --passWithNoTests"
         }
       }
+    }
   }
 }

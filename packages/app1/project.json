@@ -38,11 +38,18 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "nx:run-commands",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
-        "jestConfig": "packages/app1/jest.config.ts",
-        "passWithNoTests": true
+        "command": "vitest run --config packages/dashboard/vitest.config.ts",
+        "cwd": "."
+      },
+      "configurations": {
+        "ci": {
+          "command": "vitest run --config packages/dashboard/vitest.config.ts"
+        }
       }
     }
   }

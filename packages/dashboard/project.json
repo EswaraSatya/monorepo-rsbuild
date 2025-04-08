@@ -49,8 +49,7 @@
       ],
       "options": {
         "command": "vitest run --config packages/dashboard/vitest.config.ts --passWithNoTests=true",
-        "cwd": ".",
-        "passWithNoTests": true
+        "cwd": "."
       },
       "configurations": {
         "ci": {
